@@ -20,6 +20,10 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+    <style>
+      .big { font-size: 1.5em !important; }
+    </style>
+
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
 			if( window.location.search.match( /print-pdf/gi ) ) {
@@ -43,7 +47,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Hackdestino 1</h1>
+					<h1>Hackdestino</h1>
 					<h3>Ruby + Rails</h3>
 					<p>
 						<!-- <small>Created by <a href="http://andrewsblog.org">Andrew Fecheyr</a> / <a href="http://twitter.com/andruby">@andruby</a></small> -->
@@ -53,8 +57,10 @@
 				<section>
 					<h2>Agenda</h2>
           <ol>
+            <li>Good code</li>
             <li>Ruby 101</li>
-            <li>Build our own Twitter with Rails</li>
+            <li>Introduction to Rails</li>
+            <li>BYO Twitter</li>
           </ol>
 
 					<aside class="notes">
@@ -63,22 +69,22 @@
 				</section>
 
         <section>
-          <h2>Good code</h2>
+          <h1>Good code</h1>
           <p> I have two rules </p>
         </section>
 
         <section>
-          <p> 1. Good code is code that is easy to change </p>
+          <p class="big"> Good code is code that is easy to change </p>
           <p>&nbsp;</p>
           <ul>
             <li>Don't Repeat Yourself</li>
-            <li>Loosely coupled systems</li>
             <li>Single Responsibility Principle</li>
+            <li>Loosely coupled systems</li>
           </ul>
         </section>
 
         <section>
-          <p> 2. Write code for humans first (for computers second)</p>
+          <p class="big"> Write code for humans first<br>(for computers second)</p>
           <p>&nbsp;</p>
           <ul>
             <li>Clarity, maintenance, adaptability &gt; runtime performance</li>
@@ -86,8 +92,11 @@
           </ul>
         </section>
 
+        <section>
+          <h1>Ruby 101</h1>
+        </section>
+
 				<section>
-					<h2>Ruby 101</h2>
           <p>Ruby is a dynamic, object-oriented, general purpose language designed for programmer productivity and fun</p>
 					<aside class="notes">
             Fun means: not confusing, least amount of surprise for experienced devs, least amount of boilerplate code
@@ -105,8 +114,63 @@ $ irb
 irb(main):001:0&gt; RUBY_VERSION
 =&gt; "2.1.2"
           </code></pre>
-
 				</section>
+
+        <section>
+          <h2>Sublime Text</h2>
+          <p> ctrl+shift+b to run a saved .rb file </p>
+        </section>
+
+        <section>
+          <h1>Ruby on Rails</h1>
+        </section>
+
+        <section>
+          <h2>Why?</h2>
+          <ul>
+            <li>Ruby</li>
+            <li>DSL for writing web applications</li>
+            <li>Large community → lots of libraries</li>
+            <li>100% Open Source (MIT License)</li>
+          </ul>
+        </section>
+
+        <section>
+          <p>
+          Many common web programming tasks, such as generating HTML, making
+          data models, and routing URLs, are easy with Rails, and the resulting
+          application code is concise and readable.
+          </p>
+        </section>
+
+        <section>
+          <h2>Who's using it?</h2>
+          <div style="width: 70%; margin: 0 auto; ">
+            <ul style="float: left; width: 45%">
+              <li>37 Signals</li>
+              <li>Twitter</li>
+              <li>GitHub</li>
+              <li>Shopify</li>
+              <li>Scribd</li>
+              <li>Disney</li>
+              <li>Hulu</li>
+            </ul>
+            <ul style="float: left; width: 40%">
+              <li>Groupon</li>
+              <li>Bloomberg</li>
+              <li>Airbnb</li>
+              <li>SoundCloud</li>
+              <li>Square</li>
+              <li>Slideshare</li>
+              <li>Penny Arcade</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>todo</h2>
+          <p>MVC, Rails folder structure, Bundler</p>
+        </section>
 
 			</div>
 
@@ -126,7 +190,7 @@ irb(main):001:0&gt; RUBY_VERSION
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
