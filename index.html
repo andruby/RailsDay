@@ -47,19 +47,19 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+					<p>Ruby + Rails</p>
 					<h1>Hackdestino</h1>
-					<h3>Ruby + Rails</h3>
 					<p>
-						<!-- <small>Created by <a href="http://andrewsblog.org">Andrew Fecheyr</a> / <a href="http://twitter.com/andruby">@andruby</a></small> -->
+          <small>Slides available at <a href="http://192.168.0.102:8000">http://192.168.0.102:8000</a> or <a href="https://github.com/andruby/RailsDay">github.com/andruby/RailsDay</a></small>
 					</p>
 				</section>
 
 				<section>
 					<h2>Agenda</h2>
           <ol>
+            <li>Introduction to Ruby on Rails</li>
             <li>Good code</li>
             <li>Ruby 101</li>
-            <li>Introduction to Rails</li>
             <li>BYO Twitter</li>
           </ol>
 
@@ -69,8 +69,61 @@
 				</section>
 
         <section>
+          <p>Introduction to</p>
+          <h1>Ruby on Rails</h1>
+        </section>
+
+        <section>
+          <h2>Why?</h2>
+          <ul>
+            <li>Ruby</li>
+            <li>DSL for writing web applications</li>
+            <li>Large community → lots of libraries</li>
+            <li>100% Open Source (MIT License)</li>
+          </ul>
+        </section>
+
+        <section>
+          <p>
+          Many common web programming tasks, such as generating HTML, making
+          data models, and routing URLs, are easy with Rails, and the resulting
+          application code is concise and readable.
+          </p>
+        </section>
+
+        <section>
+          <h2>Who's using it?</h2>
+          <div style="width: 70%; margin: 0 auto; ">
+            <ul style="float: left; width: 45%">
+              <li>37 Signals</li>
+              <li>Twitter</li>
+              <li>GitHub</li>
+              <li>Shopify</li>
+              <li>Scribd</li>
+              <li>Disney</li>
+              <li>Hulu</li>
+            </ul>
+            <ul style="float: left; width: 40%">
+              <li>Groupon</li>
+              <li>Bloomberg</li>
+              <li>Airbnb</li>
+              <li>SoundCloud</li>
+              <li>Square</li>
+              <li>Slideshare</li>
+              <li>Penny Arcade</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>MVC</h2>
+          <p>Model View Controller</p>
+          <img src="img/mvc.png" alt="MVC">
+        </section>
+
+        <section>
+          <p> I have two rules for</p>
           <h1>Good code</h1>
-          <p> I have two rules </p>
         </section>
 
         <section>
@@ -119,61 +172,12 @@ irb(main):001:0&gt; RUBY_VERSION
         <section>
           <h2>Sublime Text</h2>
           <p> ctrl+shift+b to run a saved .rb file </p>
-        </section>
-
-        <section>
-          <h1>Ruby on Rails</h1>
-        </section>
-
-        <section>
-          <h2>Why?</h2>
-          <ul>
-            <li>Ruby</li>
-            <li>DSL for writing web applications</li>
-            <li>Large community → lots of libraries</li>
-            <li>100% Open Source (MIT License)</li>
-          </ul>
-        </section>
-
-        <section>
-          <p>
-          Many common web programming tasks, such as generating HTML, making
-          data models, and routing URLs, are easy with Rails, and the resulting
-          application code is concise and readable.
-          </p>
-        </section>
-
-        <section>
-          <h2>Who's using it?</h2>
-          <div style="width: 70%; margin: 0 auto; ">
-            <ul style="float: left; width: 45%">
-              <li>37 Signals</li>
-              <li>Twitter</li>
-              <li>GitHub</li>
-              <li>Shopify</li>
-              <li>Scribd</li>
-              <li>Disney</li>
-              <li>Hulu</li>
-            </ul>
-            <ul style="float: left; width: 40%">
-              <li>Groupon</li>
-              <li>Bloomberg</li>
-              <li>Airbnb</li>
-              <li>SoundCloud</li>
-              <li>Square</li>
-              <li>Slideshare</li>
-              <li>Penny Arcade</li>
-            </ul>
-          </div>
-        </section>
-
-        <section>
-          <h2>todo</h2>
-          <p>MVC, Rails folder structure, Bundler</p>
+          <img src="img/sublime.png" alt="sublime text 3">
         </section>
 
         <section>
           <h1>BYO Twitter</h1>
+          <p>With <a href="http://www.railstutorial.org/book/static_pages" target="_blank">railstutorial.org</a> </p>
         </section>
 
         <section>
@@ -187,20 +191,32 @@ irb(main):001:0&gt; RUBY_VERSION
         </section>
 
         <section>
-        <p>Visit <a href="http://www.railstutorial.org/book/static_pages" target="_blank">railstutorial.org</a> to start following chapter 3</p>
-        </section>
-
-        <section>
           <p>Chapter 3</p>
           <h1>Mostly Static Pages</h1>
         </section>
 
         <section>
-          <p>New in Rails 4.1:</p>
+          <p>Generating our rails app skeleton</p>
           <pre><code data-trim>
-bin/rails
-bin/rake
+rails new sample_app --skip-test-unit
+cd sample_app
           </code></pre>
+        </section>
+
+        <section>
+          <h2>Rails Folder Structure</h2>
+          <table>
+            <tr><th>app/</th><td>Core application code including Models, Views, Controllers</td></tr>
+            <tr><th>app/assets/</th><td>Application assets (css, js, and images)</td></tr>
+            <tr><th>bin/</th><td>rails and rake executables</td></tr>
+            <tr><th>config/</th><td>Configuration</td></tr>
+            <tr><th>db/</th><td>Database and migrations</td></tr>
+            <tr><th>public/</th><td>Data accessible to the public</td></tr>
+            <tr><th>test/</th><td>Directory for (unit, integration) tests</td></tr>
+            <tr><th>vendor/</th><td>Third-party code</td></tr>
+            <tr><th>Gemfile</th><td>List of external gem libraries used</td></tr>
+            <tr><th>Gemfile.lock</th><td>Generated by Bundler with all gem versions</td></tr>
+          </table>
         </section>
 
         <section>
@@ -234,8 +250,18 @@ end
         </section>
 
         <section>
+          <h2>Bundler</h2>
+          <p>a package manager for Ruby Gems</p>
           <p>Avoid sudo in the VM with the <code>--path</code> option</p>
-          <pre><code class="bash">bundle --without production --path vendor/bundle</code></pre>
+          <pre><code class="bash">bundle install --without production --path vendor/bundle</code></pre>
+        </section>
+
+        <section>
+          <p>New in Rails 4.1:</p>
+          <pre><code data-trim>
+bin/rails
+bin/rake
+          </code></pre>
         </section>
 
 <!--         Above the line for Andrew -->
@@ -264,7 +290,6 @@ end
             <li>update SQL</li>
           </ul>
         </section>
-
 
         <section>
           <h3>create user</h3>
