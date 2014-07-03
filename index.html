@@ -102,6 +102,12 @@
 					</aside>
 				</section>
 
+        <section>
+          <h2>Sublime Text</h2>
+          <p> ctrl+shift+b to run a saved .rb file </p>
+          <img src="img/sublime.png" alt="sublime text 3">
+        </section>
+
 				<section>
 					<h2>IRB</h2>
 					<p>
@@ -116,32 +122,99 @@ irb(main):001:0&gt; RUBY_VERSION
 				</section>
 
         <section>
-          <h2>Sublime Text</h2>
-          <p> ctrl+shift+b to run a saved .rb file </p>
-          <img src="img/sublime.png" alt="sublime text 3">
-        </section>
-
-        <section>
-          <h2>Variable Assignment</h2>
-          <pre><code class="ruby" data-trim>
-$ irb
-irb(main):001:0> company = "Addestino"
-=> "Addestino"
-irb(main):002:0> company = "Venture Spirit"
-=> "Venture Spirit"
-irb(main):003:0> company
-=> "Venture Spirit"
-          </code></pre>
-        </section>
-
-        <section>
-          <h2>Strings</h2>
+          <h2>Variables & DataTypes</h2>
           <pre><code class="ruby" data-trim>
 $ irb
 irb(main):001:0> person = "Vincent"
 => "Vincent"
 irb(main):002:0> "Hello #{person}"
 => "Hello Vincent"
+irb(main):003:0> the_answer = 42
+=> 42
+irb(main):004:0> pi = 3.141592653589793
+=> 3.141592653589793
+irb(main):005:0> array = [person, the_answer, pi, "and more"]
+=> ["Vincent", 42, 3.141592653589793, "and more"]
+irb(main):006:0> boolean = true
+=> true
+irb(main):007:0> symbol = :hello
+=> :hello
+irb(main):008:0> hash = {"Addestino" => "Consulting", "Venture Spirit" => "Gaming"}
+=> {"Addestino"=>"Consulting", "Venture Spirit"=>"Gaming"}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Objects and message passing</h2>
+          <pre><code class="ruby" data-trim>
+irb(main):001:0> "foobar".length
+=> 6
+irb(main):002:0> "foobar".empty?
+=> false
+irb(main):003:0> "".empty?
+=> true
+irb(main):004:0> if "foobar".empty?
+irb(main):005:1>   "The string is empty"
+irb(main):006:1> else
+irb(main):007:1*   "The string is nonempty"
+irb(main):008:1> end
+=> "The string is nonempty"
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Objects and message passing</h2>
+          <pre><code class="ruby" data-trim>
+irb(main):010:0> s = "foobar"
+=> "foobar"
+irb(main):010:0> x = ""
+=> ""
+irb(main):011:0> "Both are empty" if s.empty? && x.empty?
+=> nil
+irb(main):012:0> "One of the strings is empty" if s.empty? || x.empty?
+=> "One of the strings is empty"
+irb(main):013:0> "S is not empty" if !s.empty?
+=> "S is not empty"
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Method definition</h2>
+          <pre><code class="ruby" data-trim>
+irb(main):001:0> def celsius_to_fahrenheit(celsius)
+irb(main):002:1>   celsius * 9 / 5 + 32
+irb(main):003:1> end
+=> :celsius_to_fahrenheit
+irb(main):004:0> def fahrenheit_to_celsius(fahrenheit)
+irb(main):005:1>   (fahrenheit - 32) * 5 / 9
+irb(main):006:1> end
+=> :fahrenheit_to_celsius
+irb(main):007:0> celsius_to_fahrenheit(38)
+=> 100
+irb(main):008:0> fahrenheit_to_celsius(-40)
+=> -40
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Blocks and Loops</h2>
+          <pre><code class="ruby" data-trim>
+irb(main):001:0> [1, 42, 22].each do |number|
+irb(main):002:1*   puts number * 3
+irb(main):003:1> end
+3
+126
+66
+=> [1, 42, 22]
+irb(main):004:0> 2.times { puts "Hi" }
+Hi
+Hi
+=> 2
+irb(main):005:0> 5.upto(7) { |x| puts x }
+5
+6
+7
+=> 5
           </code></pre>
         </section>
 
