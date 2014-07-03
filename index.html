@@ -315,7 +315,36 @@ end
           </code></pre>
           <pre><code class="bash">bin/rails c</code></pre>
         </section>
+        <section>
+3 Available Callbacks
+Here is a list with all the available Active Record callbacks, listed in the same order in which they will get called during the respective operations:
 
+3.1 Creating an Object
+before_validation
+after_validation
+before_save
+around_save
+before_create
+around_create
+after_create
+after_save
+after_commit/after_rollback
+3.2 Updating an Object
+before_validation
+after_validation
+before_save
+around_save
+before_update
+around_update
+after_update
+after_save
+after_commit/after_rollback
+3.3 Destroying an Object
+before_destroy
+around_destroy
+after_destroy
+after_commit/after_rollback
+</section>
         <section>
           <h3>add validation on db level</h3>
           <pre><code class="bash">rails generate migration add_index_to_users_email</code></pre>
@@ -341,6 +370,38 @@ class User < ActiveRecord::Base
 end      </code></pre>
           <pre><code class="bash">rails generate migration add_password_digest_to_users password_digest:string</code></pre>
           <pre><code class="bash">bin/rails c</code></pre>
+        </section>
+
+        <section>
+          <h2>chapter 7</h2>
+          <p>Sign up</p>
+          <p>Skip</p>
+        </section>
+
+        <section>
+          <h2>chapter 8</h2>
+          <p>Sign in/sign out</p>
+        </section>
+
+        <section>
+          <h3>create session controller</h3>
+          <ul>
+            <li>name</li>
+            <li>email</li>
+          </ul>
+          <h3>create session controller</h3>
+          <pre><code class="bash">rails generate controller Sessions</code></pre>
+          <h3>routes</h3>
+          <pre><code class="ruby" id="gemfile-code" data-trim>
+SampleApp::Application.routes.draw do
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  root  'static_pages#home'
+  get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  delete '/signout' => 'sessions#destroy'
+end
+          </code></pre>
         </section>
 			</div>
 
