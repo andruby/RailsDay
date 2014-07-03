@@ -499,17 +499,17 @@ bin/rake
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;title&gt;&lt;%= full_title(yield(:title)) %&gt;&lt;/title&gt;
-    &lt;%= stylesheet_link_tag &quot;application&quot;, media: &quot;all&quot;,
-                                           &quot;data-turbolinks-track&quot; =&gt; true %&gt;
+    &lt;title&gt;Ruby on Rails Tutorial Sample App | &lt;%= yield(:title) %&gt;&lt;/title&gt;
+    &lt;%= stylesheet_link_tag &quot;application&quot;, media: &quot;all&quot;, &quot;data-turbolinks-track&quot; =&gt; true %&gt;
+    &lt;%= stylesheet_link_tag &quot;http://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css&quot;, media: &quot;all&quot;, &quot;data-turbolinks-track&quot; =&gt; true %&gt;
     &lt;%= javascript_include_tag &quot;application&quot;, &quot;data-turbolinks-track&quot; =&gt; true %&gt;
     &lt;%= csrf_meta_tags %&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;header class=&quot;navbar navbar-fixed-top navbar-inverse&quot;&gt;
+    &lt;header class=&quot;navbar navbar-static-top navbar-inverse&quot;&gt;
       &lt;div class=&quot;navbar-inner&quot;&gt;
         &lt;div class=&quot;container&quot;&gt;
-          &lt;%= link_to &quot;sample app&quot;, &#x27;#&#x27;, id: &quot;logo&quot; %&gt;
+          &lt;%= link_to &quot;sample app&quot;, &#x27;#&#x27;, id: &quot;logo&quot;, class: &#x27;brand&#x27; %&gt;
           &lt;nav&gt;
             &lt;ul class=&quot;nav pull-right&quot;&gt;
               &lt;li&gt;&lt;%= link_to &quot;Home&quot;,    root_path %&gt;&lt;/li&gt;
@@ -547,16 +547,14 @@ Rails.application.routes.draw do
 &lt;div class=&quot;center hero-unit&quot;&gt;
   &lt;h1&gt;Welcome to the Sample App&lt;/h1&gt;
 
-  &lt;h2&gt;
+  &lt;p&gt;
     This is the home page for the
     &lt;a href=&quot;http://railstutorial.org/&quot;&gt;Ruby on Rails Tutorial&lt;/a&gt;
     sample application.
-  &lt;/h2&gt;
+  &lt;/p&gt;
 
   &lt;%= link_to &quot;Sign up now!&quot;, &#x27;#&#x27;, class: &quot;btn btn-large btn-primary&quot; %&gt;
 &lt;/div&gt;
-
-&lt;%= link_to image_tag(&quot;rails.png&quot;, alt: &quot;Rails&quot;), &#x27;http://rubyonrails.org/&#x27; %&gt;
           </code></pre>
         </section>
 
