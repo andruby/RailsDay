@@ -548,17 +548,19 @@ bin/rake
         </section>
 
         <section>
-          <h2>chapter 6</h2>
-          <p>Modeling the users</p>
+          <p>chapter 6</p>
+          <h2>Modeling the users</h2>
         </section>
 
         <section>
           <h3>Active Record</h3>
           <ul>
-            <li>a host of methods for creating, saving, and finding data objects</li>
+            <li>Object-Relational-Mapping</li>
+            <li>methods for creating, saving,<br>and finding data objects</li>
             <li>no need to know SQL</li>
           </ul>
-          <h3>Migration</h3>
+          <p>&nbsp;</p>
+          <h3>Migrations</h3>
           <ul>
             <li>provided by rails</li>
             <li>create new columns in SQL</li>
@@ -572,8 +574,10 @@ bin/rake
             <li>name</li>
             <li>email</li>
           </ul>
+          <p>&nbsp;</p>
           <h3>create controller(in chapter 5)</h3>
           <pre><code class="bash">rails generate controller Users new</code></pre>
+          <p>&nbsp;</p>
           <h3>create model</h3>
           <pre><code class="bash">rails generate model User name:string email:string
       invoke  active_record
@@ -587,7 +591,7 @@ bin/rake
         <section>
           <h3>create db model</h3>
           <pre><code class="bash">bin/rake db:migrate</code></pre>
-          <h3>revert db model</h3>
+          <h3>revert last migration</h3>
           <pre><code class="bash">bin/rake db:rollback</code></pre>
 
         </section>
@@ -619,36 +623,57 @@ end
           </code></pre>
           <pre><code class="bash">bin/rails c</code></pre>
         </section>
-        <section>
-3 Available Callbacks
-Here is a list with all the available Active Record callbacks, listed in the same order in which they will get called during the respective operations:
 
-3.1 Creating an Object
-before_validation
-after_validation
-before_save
-around_save
-before_create
-around_create
-after_create
-after_save
-after_commit/after_rollback
-3.2 Updating an Object
-before_validation
-after_validation
-before_save
-around_save
-before_update
-around_update
-after_update
-after_save
-after_commit/after_rollback
-3.3 Destroying an Object
-before_destroy
-around_destroy
-after_destroy
-after_commit/after_rollback
-</section>
+        <section>
+          <h2>Active Record Callbacks</h2>
+          <table style="text-align: center">
+          <thead>
+            <tr>
+              <th style="width: 60%">Creating</th>
+              <th>Updating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>before_validation</td>
+              <td>before_validation</td>
+            </tr>
+            <tr>
+              <td>after_validation</td>
+              <td>after_validation</td>
+            </tr>
+            <tr>
+              <td>before_save</td>
+              <td>before_save</td>
+            </tr>
+            <tr>
+              <td>around_save</td>
+              <td>around_save</td>
+            </tr>
+            <tr>
+              <td>before_create</td>
+              <td>before_update</td>
+            </tr>
+            <tr>
+              <td>around_create</td>
+              <td>around_update</td>
+            </tr>
+            <tr>
+              <td>after_create</td>
+              <td>after_update</td>
+            </tr>
+            <tr>
+              <td>after_save</td>
+              <td>after_save</td>
+            </tr>
+            <tr>
+              <td>after_commit</td>
+              <td>after_commit</td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
+
         <section>
           <h3>add validation on db level</h3>
           <pre><code class="bash">rails generate migration add_index_to_users_email</code></pre>
