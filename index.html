@@ -514,7 +514,36 @@ end
           <h3>sign out</h2>
           <p>homework </p>
         </section>
+        <section>
+          <h3>chapter 9</h2>
+          <p>homework </p>
+        </section>
+        <section>
+          <h3>chapter 10</h2>
+          <p>user microposts </p>
+        </section>
+        <section>
+          <h3>generate miropost</h3>
+          <pre><code class="bash">rails generate model Micropost content:string user_id:integer</code></pre>
+        <pre><code class="ruby" id="gemfile-code" data-trim>
+class CreateMicroposts < ActiveRecord::Migration
+  def change
+    create_table :microposts do |t|
+      t.string :content
+      t.integer :user_id
 
+      t.timestamps
+    end
+    add_index :microposts, [:user_id, :created_at]
+  end
+end
+        </code></pre>
+        <section>
+          <p>add validation</p>
+          <p>do some tests in the command line</p>
+          <p>request all the posts from a certain user</p>
+        </section>
+        </section>
 			</div>
 
 		</div>
