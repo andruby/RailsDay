@@ -191,32 +191,41 @@ irb(main):001:0&gt; RUBY_VERSION
         </section>
 
         <section>
+          <h2>Rails Commands</h2>
+          <p>New in Rails 4.1:</p>
+          <pre><code data-trim>
+          bin/rails
+          bin/rake
+          </code></pre>
+        </section>
+
+        <section>
           <h2>Gemfile</h2>
-          <pre><code class="ruby" id="gemfile-code">
-source 'https://rubygems.org'
-ruby '2.1.2'
+          <pre><code class="ruby" id="gemfile-code" data-trim>
+          source 'https://rubygems.org'
+          ruby '2.1.2'
 
-gem 'rails', '4.1.4'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
+          gem 'rails', '4.1.4'
+          gem 'sass-rails', '~> 4.0.3'
+          gem 'uglifier', '>= 1.3.0'
+          gem 'coffee-rails', '~> 4.0.0'
+          gem 'jquery-rails'
+          gem 'turbolinks'
+          gem 'jbuilder', '~> 2.0'
 
-group :doc do
-  gem 'sdoc', '~> 0.4.0'
-end
+          group :doc do
+            gem 'sdoc', '~> 0.4.0'
+          end
 
-group :development do
-  gem 'sqlite3'
-  gem 'spring'
-end
+          group :development do
+            gem 'sqlite3'
+            gem 'spring'
+          end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+          group :production do
+            gem 'pg'
+            gem 'rails_12factor'
+          end
           </code></pre>
         </section>
 
@@ -225,16 +234,26 @@ end
           <pre><code class="bash">bundle --without production --path vendor/bundle</code></pre>
         </section>
 
+<!--         Above the line for Andrew -->
+
+<!--         Spacer -->
+
+<!--         Spacer -->
+
+<!--         Below the line for Thomas -->
+
         <section>
           <h2>chapter 6</h2>
           <p>Modeling the users</p>
         </section>
+
 			</div>
 
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 		<script>
 
