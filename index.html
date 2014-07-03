@@ -137,10 +137,6 @@ irb(main):005:0> array = [person, the_answer, pi, "and more"]
 => ["Vincent", 42, 3.141592653589793, "and more"]
 irb(main):006:0> boolean = true
 => true
-irb(main):007:0> symbol = :hello
-=> :hello
-irb(main):008:0> hash = {"Addestino" => "Consulting", "Venture Spirit" => "Gaming"}
-=> {"Addestino"=>"Consulting", "Venture Spirit"=>"Gaming"}
           </code></pre>
         </section>
 
@@ -235,6 +231,65 @@ irb(main):009:0> ('a'..'z').to_a.shuffle[0..7].join
 => "apfcjhvk"
           </code></pre>
         </section>
+
+        <section>
+          <h2>Hashes and Symbols</h2>
+          <pre><code class="ruby" data-trim>
+irb(main):006:0> user = {first_name: "John", last_name: "Smith"}
+=> {:first_name=>"John", :last_name=>"Smith"}
+irb(main):007:0> user[:first_name]
+=> "John"
+irb(main):008:0> user[:age] = 99
+=> 99
+irb(main):009:0> user
+=> {:first_name=>"John", :last_name=>"Smith", :age=>99}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Classes</h2>
+          <p>Everything in Ruby is an object,<br>so let's define our own object class</p>
+          <pre><code class="ruby" data-trim>
+irb(main):001:0&gt; class Word
+irb(main):002:1&gt;   def initialize(string)
+irb(main):003:2&gt;     @string = string
+irb(main):004:2&gt;   end
+irb(main):005:1&gt;
+irb(main):006:1*   def palindrome?
+irb(main):007:2&gt;     @string == @string.reverse
+irb(main):008:2&gt;   end
+irb(main):009:1&gt; end
+=&gt; :palindrome?
+irb(main):010:0&gt; word = Word.new(&quot;foobar&quot;)
+=&gt; #&lt;Word:0x007f93aba86880 @string=&quot;foobar&quot;&gt;
+irb(main):011:0&gt; word.palindrome?
+=&gt; false
+irb(main):012:0&gt; Word.new(&quot;level&quot;).palindrome?
+=&gt; true
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Inheritance</h2>
+          <pre style="width: 70%; float: left"><code class="ruby" data-trim>
+irb(main):001:0> class Word < String
+irb(main):002:1>   def palindrome?
+irb(main):003:2>     self == self.reverse
+irb(main):004:2>   end
+irb(main):005:1> end
+=> :palindrome?
+irb(main):006:0> w = Word.new("level")
+=> "level"
+irb(main):007:0> w.class
+=> Word
+irb(main):008:0> w.class.superclass
+=> String
+irb(main):009:0> w.palindrome?
+=> true
+          </code></pre>
+          <img src="img/inheritance.png" alt="inheritance" style="float: left; margin-left: 20px; margin-top: 30px">
+        </section>
+
         <section>
           <p>Introduction to</p>
           <h1>Ruby on Rails</h1>
