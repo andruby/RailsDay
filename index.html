@@ -135,8 +135,8 @@ irb(main):004:0> pi = 3.141592653589793
 => 3.141592653589793
 irb(main):005:0> array = [person, the_answer, pi, "and more"]
 => ["Vincent", 42, 3.141592653589793, "and more"]
-irb(main):006:0> boolean = true
-=> true
+irb(main):006:0> array &lt;&lt; "append item"
+=> ["Vincent", 42, 3.141592653589793, "and more", "append items"]
           </code></pre>
         </section>
 
@@ -175,6 +175,56 @@ irb(main):013:0> "S is not empty" if !s.empty?
         </section>
 
         <section>
+          <h2>Blocks and Loops</h2>
+          <pre><code class="ruby" data-trim>
+irb(main):001:0> [1, 42, 22].each do |number|
+irb(main):002:1*   puts number * 3
+irb(main):003:1> end
+3
+126
+66
+=> [1, 42, 22]
+irb(main):004:0> 2.times { puts "Hi" }
+Hi
+Hi
+=> 2
+irb(main):005:0> [2,3,5].map { |x| x ** 2 }
+=> [4, 9, 25]
+irb(main):006:0> [2,3,5].any? { |x| x > 4 }
+=> true
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Traditional Loops</h2>
+          <p>Ruby also supports while and until</p>
+          <pre><code class="ruby" data-trim>
+irb(main):006:0> i = 0
+=> 0
+irb(main):007:0> begin
+irb(main):008:1*   puts i
+irb(main):009:1>   i += 1
+irb(main):010:1> end until i == 3
+0
+1
+2
+=> nil
+irb(main):011:0> while i > 1
+irb(main):012:1>   puts i
+irb(main):013:1>   i -= 1
+irb(main):014:1> end
+3
+2
+=> nil
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Challenge</h2>
+          <p> Find the first 1000 prime numbers with Ruby </p>
+        </section>
+
+        <section>
           <h2>Method definition</h2>
           <pre><code class="ruby" data-trim>
 irb(main):001:0> def celsius_to_fahrenheit(celsius)
@@ -189,29 +239,6 @@ irb(main):007:0> celsius_to_fahrenheit(38)
 => 100.4
 irb(main):008:0> fahrenheit_to_celsius(-40)
 => -40.0
-          </code></pre>
-        </section>
-
-        <section>
-          <h2>Blocks and Loops</h2>
-          <pre><code class="ruby" data-trim>
-irb(main):001:0> [1, 42, 22].each do |number|
-irb(main):002:1*   puts number * 3
-irb(main):003:1> end
-3
-126
-66
-=> [1, 42, 22]
-irb(main):004:0> 2.times { puts "Hi" }
-Hi
-Hi
-=> 2
-irb(main):005:0> 7.downto(6) { |x| puts x }
-7
-6
-=> 7
-irb(main):006:0> [2,3,5].map { |x| x ** 2 }
-=> [4, 9, 25]
           </code></pre>
         </section>
 
