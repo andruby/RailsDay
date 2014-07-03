@@ -247,6 +247,101 @@ irb(main):001:0&gt; RUBY_VERSION
           <p>Modeling the users</p>
         </section>
 
+        <section>
+          <h3>Active Record</h3>
+          <ul>
+            <li>a host of methods for creating, saving, and finding data objects</li>
+            <li>no need to know SQL</li>
+          </ul>
+          <h3>Migration</h3>
+          <ul>
+            <li>provided by rails</li>
+            <li>create new columns in SQL</li>
+            <li>update SQL</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h3>create user</h3>
+          <ul>
+            <li>name</li>
+            <li>email</li>
+          </ul>
+          <h3>create controller(in chapter 5)</h3>
+          <pre><code class="bash">rails generate controller Users new</code></pre>
+          <h3>create model</h3>
+          <pre><code class="bash">rails generate model User name:string email:string
+      invoke  active_record
+      create    db/migrate/[timestamp]_create_users.rb
+      create    app/models/user.rb
+      invoke    rspec
+      create      spec/models/user_spec.rb</code></pre>
+        </section>
+
+
+        <section>
+          <h3>create db model</h3>
+          <pre><code class="bash">bin/rake db:migrate</code></pre>
+          <h3>revert db model</h3>
+          <pre><code class="bash">bin/rake db:rollback</code></pre>
+
+        </section>
+
+        <section>
+          <h3>create your first user, from the console</h3>
+          <pre><code class="bash">bin/rails c</code></pre>
+          <ul>
+            <li>new</li>
+            <li>save</li>
+            <li>create</li>
+            <li>destroy</li>
+            <li>find</li>
+            <li>update</li>
+            <li>...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Validations</h3>
+          <pre><code class="ruby" id="gemfile-code" data-trim>
+class User < ActiveRecord::Base
+  validates :name,  presence: true, length: { maximum: 50 }
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: true
+  before_save { self.email = email.downcase }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+end
+          </code></pre>
+          <pre><code class="bash">bin/rails c</code></pre>
+        </section>
+
+        <section>
+          <h3>add validation on db level</h3>
+          <pre><code class="bash">rails generate migration add_index_to_users_email</code></pre>
+          <pre><code class="ruby" id="gemfile-code" data-trim>
+class AddIndexToUsersEmail < ActiveRecord::Migration
+  def change
+    add_index :users, :email, unique: true
+  end
+end
+          </code></pre>
+          <pre><code class="bash">bin/rake db:migrate</code></pre>
+        </section>
+
+
+        <section>
+          <h3>adding a secure password</h3>
+          <pre><code class="ruby" id="gemfile-code" data-trim>
+class User < ActiveRecord::Base
+  .
+  .
+  .
+  has_secure_password
+end      </code></pre>
+          <pre><code class="bash">rails generate migration add_password_digest_to_users password_digest:string</code></pre>
+          <pre><code class="bash">bin/rails c</code></pre>
+        </section>
 			</div>
 
 		</div>
